@@ -1,8 +1,15 @@
 from django.shortcuts import render
+from .models import Slider
 
 
 def home(request):
-    return render(request, 'webpages/home.html')
+    sliders = Slider.objects.all()
+
+    data = {
+        'sliders': sliders
+    }
+
+    return render(request, 'webpages/home.html', data)
 
 
 def about(request):
