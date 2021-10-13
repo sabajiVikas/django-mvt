@@ -4,3 +4,7 @@
 /tubers/tubers/__init__.py
 /tubers/tubers/static
 /tubers/static
+
+/tubers/webpages/__pycache__
+/tubers/webpages/migrations
+/tubers/webpages/__init__.py
