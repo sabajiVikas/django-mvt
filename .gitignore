@@ -8,3 +8,7 @@
 /tubers/webpages/__pycache__
 /tubers/webpages/migrations
 /tubers/webpages/__init__.py
+
+/tubers/youtubers/__pycache__
+/tubers/youtubers/migrations
+/tubers/youtubers/__init__.py
