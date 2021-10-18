@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'youtubers.apps.YoutubersConfig',
     'webpages.apps.WebpagesConfig',
+
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
