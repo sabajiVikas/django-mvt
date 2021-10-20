@@ -16,3 +16,7 @@
 /tubers/accounts/__pycache__
 /tubers/accounts/migrations
 /tubers/accounts/__init__.py
+
+/tubers/hiretubers/__pycache__
+/tubers/hiretubers/migrations
+/tubers/hiretubers/__init__.py

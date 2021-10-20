@@ -8,29 +8,39 @@
 		Register
 	</h1>
 	<div class="row">
+		<div class="col-6 offset-3">
+			{% include 'messages.html' %}
+		</div>
+	</div>
+	<div class="row">
 		<div class="col-md-6 ">
 			<img src="{% static './assets/images/login-image.png' %}" class="img-fluid" alt="img">
 		</div>
 		<form method="post" action="{% url 'register' %}" class="col-md-5 offset-md-1">
 			{% csrf_token %}
 			<div class="form-group">
-				<input type="text" name="first_name" class="form-control" placeholder="firstname...">
+				<input type="text" name="first_name" class="form-control" placeholder="firstname..."
+					required>
 			</div>
 			<div class="form-group">
-				<input type="text" name="last_name" class="form-control" placeholder="lastname...">
+				<input type="text" name="last_name" class="form-control" placeholder="lastname..."
+					required>
 			</div>
 			<div class="form-group">
-				<input type="text" name="username" class="form-control" placeholder="username...">
+				<input type="text" name="username" class="form-control" placeholder="username..."
+					required>
 			</div>
 			<div class="form-group">
-				<input type="email" name="email" class="form-control" placeholder="email address...">
+				<input type="email" name="email" class="form-control" placeholder="email address..."
+					required>
 			</div>
 			<div class="form-group">
-				<input type="password" name="password" class="form-control" placeholder="password...">
+				<input type="password" name="password" class="form-control" placeholder="password..."
+					required>
 			</div>
 			<div class="form-group">
 				<input type="text" name="confirm_password" class="form-control"
-					placeholder="confirm password...">
+					placeholder="confirm password..." required>
 			</div>
 
 			<button type="submit" class="btn btn-accent form-btn w-100 mt-3 mb-3">SignUp</button>

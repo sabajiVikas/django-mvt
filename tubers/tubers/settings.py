@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accounts.apps.AccountsConfig',
+    'hiretubers.apps.HiretubersConfig',
     'youtubers.apps.YoutubersConfig',
     'webpages.apps.WebpagesConfig',
 

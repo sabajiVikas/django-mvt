@@ -11,8 +11,6 @@
 		</h1>
 	</div>
 
-
-
 	<section class="head container mt-5 mb-5">
 		<div class="row">
 			<div class="col-md-4 d-flex justify-content-center align-items-center">
@@ -58,41 +56,75 @@
 
 	<section class="youtuber-form container mt-5 mb-5">
 		<div class="row">
-			<form class="col-md-8 offset-md-2">
+			<form method="post" action="{% url 'hiretuber' %}" class="col-md-8 offset-md-2">
+				{% csrf_token %}
 				<h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
+
+				{% if user.is_authenticated %}
+				<input type="hidden" name="user_id" value="{{ user.id }}">
+				{% else %}
+				<input type="hidden" name="user_id" value="00">
+				{% endif %}
+
+				<input type="hidden" name="tuber_id" value="{{ tuber.id }}">
 
 				<div class="form-row">
 					<div class="form-group col-md-4">
-						<input type="email" class="form-control" placeholder="First Name">
+						{% if user.is_authenticated %}
+						<input type="text" name="first_name" value="{{ user.first_name }}"
+							class="form-control" placeholder="firstname..." required>
+						{% else %}
+						<input type="text" name="first_name" class="form-control"
+							placeholder="firstname..." required>
+						{% endif %}
 					</div>
 					<div class="form-group col-md-4">
-						<input type="password" class="form-control" placeholder="Last Name">
+						{% if user.is_authenticated %}
+						<input type="text" name="last_name" value="{{ user.last_name }}"
+							class="form-control" placeholder="firstname..." required>
+						{% else %}
+						<input type="text" name="last_name" class="form-control"
+							placeholder="lastname..." required>
+						{% endif %}
 					</div>
+
 					<div class="form-group col-md-4">
-						<input type="email" class="form-control" placeholder="Email">
+						{% if user.is_authenticated %}
+						<input type="email" name="email" value="{{ user.email }}"
+							class="form-control" placeholder="email..." required>
+						{% else %}
+						<input type="email" name="email" class="form-control"
+							placeholder="email..." required>
+						{% endif %}
 					</div>
 				</div>
 
 				<div class="form-group">
-					<input type="password" class="form-control" placeholder="Interested In...">
+					<select name="tuber_name" class="form-control">
+						<option selected>Select Tuber...</option>
+						<option value="{{ tuber.name }}">{{ tuber.name }}</option>
+					</select>
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col-md-4">
-						<input type="text" class="form-control" placeholder="City">
+						<input type="text" name="city" class="form-control"
+							placeholder="city..." required>
 					</div>
 					<div class="form-group col-md-4">
-						<input type="text" class="form-control" placeholder="State">
+						<input type="text" name="state" class="form-control"
+							placeholder="state..." required>
 					</div>
 					<div class="form-group col-md-4">
-						<input type="text" class="form-control" placeholder="Phone Number">
+						<input type="text" name="phone" class="form-control"
+							placeholder="phonenumber..." required>
 					</div>
 
 				</div>
 
 				<div class="form-group pt-2">
-					<textarea class="form-control" rows="3"
-						placeholder="Details Message"></textarea>
+					<textarea name="message" class="form-control" rows="3" placeholder="message..."
+						required></textarea>
 				</div>
 				<div class="text-center">
 					<button type="submit" class="btn btn-accent">Contact Us</button>
