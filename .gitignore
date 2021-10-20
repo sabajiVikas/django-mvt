@@ -12,3 +12,7 @@
 /tubers/youtubers/__pycache__
 /tubers/youtubers/migrations
 /tubers/youtubers/__init__.py
+
+/tubers/accounts/__pycache__
+/tubers/accounts/migrations
+/tubers/accounts/__init__.py
