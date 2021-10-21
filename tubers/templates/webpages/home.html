@@ -50,7 +50,9 @@
 			{% for fy in f_yt %}
 			<div class="card border-0 text-center ml-3 mr-3">
 				<div class="feature-text">
-					<img src="{{ fy.photo.url }}" class="card-img-top" alt="team-member">
+					<a href="{% url 'youtuber_detail' fy.id %}">
+						<img src="{{ fy.photo.url }}" class="card-img-top" alt="team-member">
+					</a>
 					<span class="text-left bg-accent font-weight-bold">
 						Featured
 					</span>
@@ -94,7 +96,9 @@
 			{% for y in yt %}
 			<div class="card border-0 text-center">
 				<div>
-					<img src="{{ y.photo.url }}" class="card-img-top" alt="team-member">
+					<a href="{% url 'youtuber_detail' y.id %}">
+						<img src="{{ y.photo.url }}" class="card-img-top" alt="team-member">
+					</a>
 
 				</div>
 				<div class="card-body">

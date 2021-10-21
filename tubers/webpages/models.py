@@ -1,4 +1,26 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+
+
+class About(models.Model):
+    title = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='media/about/%Y/%m/%d/')
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    company = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Team(models.Model):
